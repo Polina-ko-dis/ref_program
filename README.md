@@ -2,6 +2,10 @@
 
 Копия страницы TravelLine Extranet на настоящих компонентах Reactor. Основа меню взята из [LK_B2B](https://github.com/Polina-ko-dis/LK_B2B), содержание и состояния — из предоставленных макетов Figma и тестовой страницы.
 
+Публичная версия: [GitHub Pages](https://polina-ko-dis.github.io/ref_program/#/ReferralProgram).
+
+Исходники находятся в `main`, готовая сборка для GitHub Pages — в `gh-pages`. Для обновления сайта выполните `pnpm build:pages` в сети с доступом к зависимостям Reactor и опубликуйте содержимое `dist/` в корень `gh-pages` вместе с пустым файлом `.nojekyll`. В Settings → Pages выбран источник `gh-pages`, папка `/`.
+
 ## Открыть
 
 Локальный адрес: **http://127.0.0.1:4175/#/ReferralProgram**.

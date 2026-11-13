@@ -7,6 +7,7 @@
   "scripts": {
     "dev": "vite --host 127.0.0.1 --port 4175 --strictPort",
     "build": "vite build",
+    "build:pages": "vite build --base=/ref_program/",
     "preview": "vite preview --host 127.0.0.1 --port 4176",
     "test": "node --test tests/*.test.mjs"
   },

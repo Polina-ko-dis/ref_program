@@ -111,7 +111,7 @@ function Prototype() {
         <div className="workspace-scroll" ref={workspaceScroll}>
           <div className="workspace-content">
             <ReferralPage config={config} onChange={update} errors={errors} onActivation={activation} onLoyalty={() => setDialog('loyalty')}/>
-            <footer className="footer"><div><Text typography="caption" color="neutral" text="© ООО «ТРЭВЕЛ ЛАЙН СИСТЕМС», 2021 – 2026"/><Text typography="caption" color="neutral" text="TravelLine: Platform — автоматизация процессов для гостиничного бизнеса"/></div><img className="footer-brand" src="/assets/travelline-logo.svg" alt="TravelLine"/></footer>
+            <footer className="footer"><div><Text typography="caption" color="neutral" text="© ООО «ТРЭВЕЛ ЛАЙН СИСТЕМС», 2021 – 2026"/><Text typography="caption" color="neutral" text="TravelLine: Platform — автоматизация процессов для гостиничного бизнеса"/></div><img className="footer-brand" src={`${import.meta.env.BASE_URL}assets/travelline-logo.svg`} alt="TravelLine"/></footer>
           </div>
         </div>
       </div>
