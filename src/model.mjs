@@ -1,6 +1,6 @@
 export const STORAGE_KEY = 'referral-prototype-v1';
-const reward = () => ({voucher: false, voucherId: '', points: false, amount: undefined, method: 'fixed', upgrade: false, limited: false, limit: undefined});
-export const createInitialConfig = (kind = 'discount') => ({kind, status: 'inactive', saved: false, registration: reward(), stay: reward(), invited: reward()});
+const reward = () => ({voucher: false, voucherId: '', points: false, amount: undefined, method: 'fixed', upgrade: false, upgradeMode: 'level-up', limited: false, limit: undefined});
+export const createInitialConfig = (kind = 'discount') => ({kind, status: 'inactive', saved: false, accumulation: 'money', registration: reward(), stay: reward(), invited: reward()});
 
 export function validateConfig(config, {activation = config.status === 'active'} = {}) {
   const errors = {};
@@ -31,7 +31,7 @@ export function prepareConfig(config) {
     if (!item.voucher) item.voucherId = '';
     if (prepared.kind !== 'points') item.points = false;
     if (!item.points) {item.amount = undefined; item.method = 'fixed';}
-    if (key !== 'stay') item.upgrade = false;
+    if (key !== 'stay') {item.upgrade = false; item.upgradeMode = 'level-up';}
     if (key !== 'registration') item.limited = false;
     if (!item.limited) item.limit = undefined;
   }
@@ -48,10 +48,12 @@ export function readConfig(storage) {
     const config = createInitialConfig(parsed.kind);
     config.status = parsed.status;
     config.saved = parsed.saved;
+    config.accumulation = ['money', 'nights', 'mixed'].includes(parsed.accumulation) ? parsed.accumulation : 'money';
     for (const key of ['registration', 'stay', 'invited']) {
       for (const flag of ['voucher', 'points', 'upgrade', 'limited']) config[key][flag] = parsed[key][flag] === true;
       config[key].voucherId = typeof parsed[key].voucherId === 'string' ? parsed[key].voucherId : '';
       config[key].method = parsed[key].method === 'percent' ? 'percent' : 'fixed';
+      config[key].upgradeMode = parsed[key].upgradeMode === 'percent' ? 'percent' : 'level-up';
       for (const number of ['amount', 'limit']) config[key][number] = Number.isFinite(parsed[key][number]) ? parsed[key][number] : undefined;
     }
     return prepareConfig(config);

@@ -305,16 +305,6 @@ body {
 .voucher-select>* {
   width: 100%
 }
-.upgrade-line {
-  gap: 0;
-  flex-wrap: nowrap
-}
-.upgrade-line>:first-child {
-  flex: 0 1 auto!important
-}
-.upgrade-line>:last-child {
-  flex: none
-}
 .points-option {
   display: flex;
   flex-direction: column;
@@ -646,9 +636,6 @@ body {
   }
   .limit-line {
     gap: 8px
-  }
-  .upgrade-line {
-    align-items: flex-start
   }
   .voucher-line {
     gap: 8px

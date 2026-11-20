@@ -31,7 +31,7 @@ export default function ReferralPage({config, onChange, errors, onActivation, on
       <div className="reward-separator"/>
       <section className="reward-section">
         <GroupTitle text="За первое проживание приглашенного гостя"/>
-        <RewardGroup id="stay" title="За первое проживание приглашенного гостя" value={config.stay} onChange={update('stay')} kind={config.kind} errors={errors} allowUpgrade/>
+        <RewardGroup id="stay" title="За первое проживание приглашенного гостя" value={config.stay} onChange={update('stay')} kind={config.kind} accumulation={config.accumulation} errors={errors} allowUpgrade/>
       </section>
     </Tile>
     <Tile header={<Text text="Вознаграждения для приглашенных гостей" typography="block-title" style={{fontFamily: "'Open Sans', sans-serif", lineHeight: '24px'}}/>} decoration="rewards-tile">

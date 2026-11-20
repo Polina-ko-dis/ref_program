@@ -1,6 +1,6 @@
 import React from 'react';
-import {Text, Checkbox, Select, NumberField, HelpIcon} from '@reactor/reactor';
-import {voucherOptions, accrualOptions} from './data.mjs';
+import {Text, Checkbox, Select, NumberField} from '@reactor/reactor';
+import {voucherOptions, accrualOptions, upgradeOptions, upgradeLabels} from './data.mjs';
 
 export const ErrorText = ({text}) => text ? <div role="alert" className="field-error"><Text text={text} color="danger" typography="caption"/></div> : null;
 
@@ -8,7 +8,7 @@ function NumberInput({label, value, onChange, disabled, error, percent = false, 
   return <div className={`number-input number-${size}`}><label><span className="sr-only">{label}</span><NumberField value={value} onChange={onChange} disabled={disabled} mask={percent ? 'dec' : 'int'} size="stretch" state={error ? 'danger' : undefined}/></label><ErrorText text={error}/></div>;
 }
 
-export default function RewardGroup({id, value, onChange, kind, errors, allowUpgrade, allowLimit, title}) {
+export default function RewardGroup({id, value, onChange, kind, accumulation, errors, allowUpgrade, allowLimit, title}) {
   const set = patch => onChange({...value, ...patch});
   const error = field => errors[`${id}.${field}`];
   return <div className="reward-group" role="group" aria-label={title}>
@@ -26,7 +26,7 @@ export default function RewardGroup({id, value, onChange, kind, errors, allowUpg
             <div className="setting-row"><Text text="Размер начисления"/><div className="amount-line"><NumberInput label={`${title}: размер начисления`} value={value.amount} onChange={amount => set({amount})} error={error('amount')} percent={id === 'stay' && value.method === 'percent'} size="sm"/><Text text={id === 'stay' && value.method === 'percent' ? '%' : 'баллов'}/></div></div>
           </div>}
         </div>}
-        {allowUpgrade && <div className="upgrade-line"><div className="check-control"><Checkbox value={value.upgrade} onChange={upgrade => set({upgrade})} label="Повышение статуса гостя в Программе лояльности на уровень выше"/></div><HelpIcon hint="Повышаются все уровни, кроме максимального"/></div>}
+        {allowUpgrade && <div className="upgrade-line"><div className="check-control"><Checkbox value={value.upgrade} onChange={upgrade => set({upgrade})} label={upgradeLabels[accumulation] || upgradeLabels.money}/></div><Select options={upgradeOptions} size="lg" value={value.upgradeMode} onChange={upgradeMode => set({upgradeMode})} disabled={!value.upgrade}/></div>}
       </div>
     </div>
     {allowLimit && <div className="setting-row"><Text text="Ограничить"/><div className="limit-line"><div className="check-control"><Checkbox value={value.limited} onChange={limited => set({limited})} label="Только за первые"/></div><NumberInput label="Ограничить количество регистраций" value={value.limit} onChange={limit => set({limit})} disabled={!value.limited} error={error('limit')}/><Text text="регистраций"/></div></div>}

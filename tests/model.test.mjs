@@ -95,3 +95,25 @@ test('storage failure reports an error and leaves draft status unchanged', () =>
   assert.equal(result.config, undefined);
   assert.equal(config.status, 'inactive');
 });
+
+test('upgrade accrual mode survives a reload and missing mode falls back to level upgrade', () => {
+  const storage = memory();
+  const config = createInitialConfig();
+  config.stay.upgrade = true;
+  config.stay.upgradeMode = 'percent';
+  saveConfig(storage, config);
+  assert.equal(readConfig(storage).stay.upgradeMode, 'percent');
+  const legacy = readConfig(memory(JSON.stringify({kind: 'discount', status: 'inactive', saved: true, registration: {}, stay: {upgrade: true}, invited: {}})));
+  assert.equal(legacy.stay.upgradeMode, 'level-up');
+  assert.equal(legacy.registration.upgradeMode, 'level-up');
+});
+
+test('accumulation type survives a reload and unknown values fall back to money', () => {
+  const storage = memory();
+  const config = createInitialConfig();
+  config.accumulation = 'nights';
+  saveConfig(storage, config);
+  assert.equal(readConfig(storage).accumulation, 'nights');
+  const legacy = readConfig(memory(JSON.stringify({kind: 'discount', status: 'inactive', saved: true, accumulation: 'miles', registration: {}, stay: {}, invited: {}})));
+  assert.equal(legacy.accumulation, 'money');
+});
