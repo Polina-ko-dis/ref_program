@@ -1,6 +1,6 @@
 import React from 'react';
-import {Text, Checkbox, Select, NumberField} from '@reactor/reactor';
-import {voucherOptions, accrualOptions, upgradeOptions, upgradeLabels} from './data.mjs';
+import {Text, Checkbox, Select, NumberField, HelpIcon} from '@reactor/reactor';
+import {voucherOptions, accrualOptions, upgradeOptions, upgradeLabels, upgradeHints} from './data.mjs';
 
 export const ErrorText = ({text}) => text ? <div role="alert" className="field-error"><Text text={text} color="danger" typography="caption"/></div> : null;
 
@@ -26,7 +26,7 @@ export default function RewardGroup({id, value, onChange, kind, accumulation, er
             <div className="setting-row"><Text text="Размер начисления"/><div className="amount-line"><NumberInput label={`${title}: размер начисления`} value={value.amount} onChange={amount => set({amount})} error={error('amount')} percent={id === 'stay' && value.method === 'percent'} size="sm"/><Text text={id === 'stay' && value.method === 'percent' ? '%' : 'баллов'}/></div></div>
           </div>}
         </div>}
-        {allowUpgrade && <div className="upgrade-line"><div className="check-control"><Checkbox value={value.upgrade} onChange={upgrade => set({upgrade})} label={upgradeLabels[accumulation] || upgradeLabels.money}/></div><Select options={upgradeOptions} size="lg" value={value.upgradeMode} onChange={upgradeMode => set({upgradeMode})} disabled={!value.upgrade}/></div>}
+        {allowUpgrade && <div className="upgrade-line"><div className="check-control"><Checkbox value={value.upgrade} onChange={upgrade => set({upgrade})} label={upgradeLabels[accumulation] || upgradeLabels.money}/></div><div className="upgrade-select"><Select options={upgradeOptions[accumulation] || upgradeOptions.money} size="lg" value={value.upgradeMode} onChange={upgradeMode => set({upgradeMode})} disabled={!value.upgrade}/>{value.upgradeMode !== 'percent' && <HelpIcon hint={upgradeHints[accumulation] || upgradeHints.money}/>}</div></div>}
       </div>
     </div>
     {allowLimit && <div className="setting-row"><Text text="Ограничить"/><div className="limit-line"><div className="check-control"><Checkbox value={value.limited} onChange={limited => set({limited})} label="Только за первые"/></div><NumberInput label="Ограничить количество регистраций" value={value.limit} onChange={limit => set({limit})} disabled={!value.limited} error={error('limit')}/><Text text="регистраций"/></div></div>}
