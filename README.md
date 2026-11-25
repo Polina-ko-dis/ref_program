@@ -6,6 +6,12 @@
 
 Исходники находятся в `main`, готовая сборка для GitHub Pages — в `gh-pages`. Для обновления сайта выполните `pnpm build:pages` в сети с доступом к зависимостям Reactor и опубликуйте содержимое `dist/` в корень `gh-pages` вместе с пустым файлом `.nojekyll`. В Settings → Pages выбран источник `gh-pages`, папка `/`.
 
+## Карта гостя
+
+В папке `guest-card/` лежит второй прототип — карта гостя. Публичная версия: [GitHub Pages](https://polina-ko-dis.github.io/ref_program/guest-card/#/GuestCard), локально — **http://127.0.0.1:4177/#/GuestCard** (`pnpm dev` в папке `guest-card/`).
+
+Для обновления сайта выполните `pnpm build:pages` в папке `guest-card/` и опубликуйте содержимое её `dist/` в папку `guest-card/` ветки `gh-pages`. Корень `gh-pages` при этом не трогайте — там живёт сборка реферальной программы.
+
 ## Открыть
 
 Локальный адрес: **http://127.0.0.1:4175/#/ReferralProgram**.
