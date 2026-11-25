@@ -1,0 +1,1 @@
+const n={"main.collapseMenu":"Свиване на менюто","main.expandMenu":"Показване на менюто","ribbon.help":"Помощ","ribbon.search.findPage":"Намери страница","ribbon.search.noResults":"Страницата не е намерена. Въведете други ключови думи.","ribbon.tooltipBack":"Назад","ribbon.userGuide":"Ръководство за потребителя"};export{n as data};

@@ -1,0 +1,1 @@
+const n={"main.collapseMenu":"მენიუს ჩაკეცვა","main.expandMenu":"მენიუს გაშლა","ribbon.help":"დახმარება","ribbon.search.findPage":"გვერდის მოძიება","ribbon.search.noResults":"გვერდი არ მოიძებნა. შეიყვანეთ სხვა საკვანძო სიტყვები.","ribbon.tooltipBack":"უკან","ribbon.userGuide":"მომხმარებლის სახელმძღვანელო"};export{n as data};

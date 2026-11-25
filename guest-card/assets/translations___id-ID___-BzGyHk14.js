@@ -1,0 +1,1 @@
+const a={"main.collapseMenu":"Kecilkan menu","main.expandMenu":"Buka menu","ribbon.help":"Bantuan","ribbon.search.findPage":"Temukan halaman","ribbon.search.noResults":"Halaman tidak ditemukan. Masukkan petunjuk kata lainnya.","ribbon.tooltipBack":"Sebelumnya","ribbon.userGuide":"Panduan pengguna"};export{a as data};

@@ -1,0 +1,1 @@
+const n={"main.collapseMenu":"메뉴 접기","main.expandMenu":"메뉴 펼치기","ribbon.help":"도움","ribbon.search.findPage":"페이지 찾기","ribbon.search.noResults":"페이지를 찾을 수 없습니다. 다른 키워드를 입력하세요.","ribbon.tooltipBack":"이전","ribbon.userGuide":"사용자 가이드"};export{n as data};

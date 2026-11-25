@@ -1,0 +1,1 @@
+const n={"main.collapseMenu":"Свернуть меню","main.expandMenu":"Развернуть меню","ribbon.help":"Помощь","ribbon.search.findPage":"Найти страницу","ribbon.search.noResults":"Страница не найдена. Введите другие ключевые слова.","ribbon.tooltipBack":"Назад","ribbon.userGuide":"Руководство пользователя"};export{n as data};

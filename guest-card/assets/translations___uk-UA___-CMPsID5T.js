@@ -1,0 +1,1 @@
+const n={"main.collapseMenu":"Згорнути меню","main.expandMenu":"Розгорнути меню","ribbon.help":"Допомога","ribbon.search.findPage":"Знайти сторінку","ribbon.search.noResults":"Сторінку не знайдено. Введіть інші ключові слова.","ribbon.tooltipBack":"Назад","ribbon.userGuide":"Посібник користувача"};export{n as data};

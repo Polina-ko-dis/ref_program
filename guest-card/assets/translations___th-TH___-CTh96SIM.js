@@ -1,0 +1,1 @@
+const n={"main.collapseMenu":"ปิดเมนู","main.expandMenu":"แสดงเมนู","ribbon.help":"ความช่วยเหลือ","ribbon.search.findPage":"ค้นหาหน้า","ribbon.search.noResults":"ไม่พบหน้านี้ ป้อนคำสำคัญอื่น ๆ","ribbon.tooltipBack":"กลับ","ribbon.userGuide":"คู่มือผู้ใช้"};export{n as data};

@@ -1,0 +1,1 @@
+const i={"main.collapseMenu":"Menyuni kichraytirish","main.expandMenu":"Menyuni kengaytirish","ribbon.help":"Yordam","ribbon.search.findPage":"Sahifani topish","ribbon.search.noResults":"Sahifa topilmadi. Boshqa kalit so'zlarni kiriting.","ribbon.tooltipBack":"Orqaga","ribbon.userGuide":"Foydalanuvchi yo'riqnomasi"};export{i as data};

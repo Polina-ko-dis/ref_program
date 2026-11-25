@@ -1,0 +1,1 @@
+const n={"main.collapseMenu":"Zwiń menu","main.expandMenu":"Rozwiń menu","ribbon.help":"Pomoc","ribbon.search.findPage":"Znajdź stronę","ribbon.search.noResults":"Nie znaleziono strony. Spróbuj wprowadzić inne słowa kluczowe.","ribbon.tooltipBack":"Wstecz","ribbon.userGuide":"Podręcznik użytkownika"};export{n as data};

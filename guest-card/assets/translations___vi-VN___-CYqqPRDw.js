@@ -1,0 +1,1 @@
+const n={"main.collapseMenu":"Danh mục thu gọn","main.expandMenu":"Hiển thị danh mục","ribbon.help":"Hỗ trợ","ribbon.search.findPage":"Tìm trang","ribbon.search.noResults":"Không tìm thấy trang. Nhập từ khóa khác.","ribbon.tooltipBack":"Quay lại","ribbon.userGuide":"Hướng dẫn sử dụng"};export{n as data};

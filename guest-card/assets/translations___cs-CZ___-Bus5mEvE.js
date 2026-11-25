@@ -1,0 +1,1 @@
+const a={"main.collapseMenu":"Sbalit menu","main.expandMenu":"Rozbalit menu","ribbon.help":"Nápověda","ribbon.search.findPage":"Vyhledat stránku","ribbon.search.noResults":"Stránka nebyla nalezena. Zadejte jiná klíčová slova.","ribbon.tooltipBack":"Zpět","ribbon.userGuide":"Uživatelská příručka"};export{a as data};

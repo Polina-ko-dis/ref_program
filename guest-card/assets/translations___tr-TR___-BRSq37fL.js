@@ -1,0 +1,1 @@
+const a={"main.collapseMenu":"Menüyü daralt","main.expandMenu":"Menüyü göster","ribbon.help":"Yardım","ribbon.search.findPage":"Bir sayfa bul","ribbon.search.noResults":"Sayfa bulunamadı. Diğer anahtar kelimeleri girin.","ribbon.tooltipBack":"Geri","ribbon.userGuide":"Kullanım kılavuzu"};export{a as data};

@@ -1,0 +1,1 @@
+const n={"main.collapseMenu":"បង្រួមម៉ឺនុយ","main.expandMenu":"បង្ហាញម៉ឺនុយ","ribbon.help":"ជំនួយ","ribbon.search.findPage":"ស្វែងរកទំព័រមួយ","ribbon.search.noResults":"រកមិនឃើញទំព័រ។ បញ្ចូលពាក្យគន្លឹះផ្សេងទៀត។","ribbon.tooltipBack":"ត្រលប់ក្រោយ","ribbon.userGuide":"ការណែនាំសម្រាប់អ្នកប្រើប្រាស់"};export{n as data};
