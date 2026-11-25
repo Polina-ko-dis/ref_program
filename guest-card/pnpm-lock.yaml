@@ -8,18 +8,21 @@ importers:
 
   .:
     dependencies:
-      '@fontsource/roboto-condensed':
-        specifier: 5.3.0
-        version: 5.3.0
       '@reactor/intl':
         specifier: 1.0.155
         version: 1.0.155
       '@reactor/reactor':
         specifier: 0.0.226
         version: 0.0.226
+      '@reactor/scaffold-ui':
+        specifier: 0.0.224
+        version: 0.0.224
       '@reactor/style':
         specifier: 0.0.200
         version: 0.0.200
+      '@reactor/table':
+        specifier: 0.0.154
+        version: 0.0.154
       react:
         specifier: 19.3.0
         version: 19.3.0
@@ -431,11 +434,17 @@ packages:
   '@reactor/router@0.0.156':
     resolution: {integrity: sha512-Nrc6GtwIU5yRS4dmjnJPIVIAQOY0VB7gTiUevdAJFkfIyOaP+l8Ta4zz8dGKasS7YWW+shKHKJTMW5rJx0nIuA==}
 
+  '@reactor/scaffold-ui@0.0.224':
+    resolution: {integrity: sha512-RgAnvuH9mbJ/ZSUhKd7UMeF7ocJym7S4r2G8apFZwbSar8PexsNBbW1jP3CyUP+Ho2iBB3OpPGVzWTAgf19HEA==}
+
   '@reactor/store@0.0.156':
     resolution: {integrity: sha512-ifI2fdXlcJFHT0Xeu6YGs218P1azqv8rmnqPB9iuELeht3rjwW4lC3T4VtphQ3tV9fHBL2H4qUyJCxOK/eRFMA==}
 
   '@reactor/style@0.0.200':
     resolution: {integrity: sha512-15S6ngC0PxoAXkuQmHDMRNf0C1GxUG4dq3GcZZT0Q6cRTZWBrjfo7lbSd9EAxLefjVGf17n/9QgtMq3oIMeUxw==}
+
+  '@reactor/table@0.0.154':
+    resolution: {integrity: sha512-hQDAx17JFdHqKbPK8Wtk8w0wvbvDki2OgDCrovQKcTI/lYGfeWRPEQckHdzlHiIi0doM+IcKnziFqewwBYmfdw==}
 
   '@reactor/theme@0.0.186':
     resolution: {integrity: sha512-/lic6ppz9+hbe5ywcH1/na5xCFEct/bcOeDzLJlxZwVrIMHN13ahIse3a+deSQwYU2yJm6mO4u7Jbg7aGT+bUg==}
@@ -1352,6 +1361,20 @@ snapshots:
       '@types/react': 19.3.0
       react: 19.3.0
 
+  '@reactor/scaffold-ui@0.0.224':
+    dependencies:
+      '@reactor/browser': 0.0.148
+      '@reactor/core': 0.0.199
+      '@reactor/hooks': 0.0.151
+      '@reactor/intl': 1.0.155
+      '@reactor/reactor': 0.0.226
+      '@reactor/router': 0.0.156
+      '@reactor/store': 0.0.156
+      '@reactor/theme': 0.0.186
+      '@reactor/windows': 0.0.140
+      '@types/react': 19.3.0
+      react: 19.3.0
+
   '@reactor/store@0.0.156':
     dependencies:
       '@reactor/core': 0.0.199
@@ -1368,6 +1391,15 @@ snapshots:
       '@fontsource/noto-sans-thai': 5.3.0
       '@fontsource/open-sans': 5.3.0
       '@fontsource/roboto-condensed': 5.3.0
+
+  '@reactor/table@0.0.154':
+    dependencies:
+      '@reactor/browser': 0.0.148
+      '@reactor/core': 0.0.199
+      '@reactor/reactor': 0.0.226
+      '@reactor/style': 0.0.200
+      '@reactor/theme': 0.0.186
+      react: 19.3.0
 
   '@reactor/theme@0.0.186': {}
 

@@ -2,12 +2,11 @@ import React from 'react';
 import {createRoot} from 'react-dom/client';
 import {intl} from '@reactor/intl';
 import {translations} from '@reactor/reactor';
+import {translations as scaffoldTranslations} from '@reactor/scaffold-ui';
 import App from './App.jsx';
 import './styles.css';
-import '@fontsource/roboto-condensed/cyrillic-300.css';
-import '@fontsource/roboto-condensed/latin-300.css';
 async function start() {
-  await intl.Module.init({locale: 'ru-RU', translations: [translations]});
+  await intl.Module.init({locale: 'ru-RU', translations: [translations, scaffoldTranslations]});
   createRoot(document.getElementById('root')).render(<React.StrictMode><App/></React.StrictMode>);
 }
 start().catch(error => {

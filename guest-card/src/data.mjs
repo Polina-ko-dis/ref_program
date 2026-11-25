@@ -5,20 +5,18 @@ export const guest = {
   middleName: '',
   phone: '+48616449979',
   email: 'viezd12@gmail.com',
-  birthDate: '11 ноября 1999',
   birthTimestamp: Date.UTC(1999, 10, 11),
 };
 
 export const card = {
   number: '02169100000153',
   level: 'VIP VIP 1',
-  discount: 'VIP VIP 1, 30%',
+  discount: 30,
 };
 
 export const accumulations = {
   nights: 29,
   amount: 273000,
-  amountLabel: '273 000 RUB',
   progress: 100,
   maxLevelReached: true,
   vouchers: 0,
@@ -28,27 +26,27 @@ export const attentionText = 'Накопления на карту начисл�
 
 // Типы операций: stay — проживание (номер бронирования), level — изменение уровня, voucher — операции с ваучером.
 export const operations = [
-  {type: 'level', label: 'Изменение уровня', comment: 'Вознаграждение по реферальной программе', level: 'SUPER VIP', operationDate: '24 ноября 2026'},
-  {type: 'voucher', label: 'Срок действия ваучера истёк', operationDate: '17 сентября 2026'},
-  {type: 'voucher', label: 'Присвоение ваучера', operationDate: '14 сентября 2026'},
-  {type: 'stay', label: '25271547', cost: 2000, nights: 2, discountRub: 0, discountPct: 0, level: 'VIP VIP 1', checkoutDate: '3 сентября 2026', operationDate: '8 сентября 2026'},
-  {type: 'stay', label: '24101315', cost: 2000, nights: 1, discountRub: 0, discountPct: 0, level: 'VIP VIP 1', checkoutDate: '2 июня 2026', operationDate: '8 сентября 2026'},
-  {type: 'stay', label: '23362037', cost: 192000, nights: 12, discountRub: 0, discountPct: 0, level: 'VIP VIP 1', checkoutDate: '11 апреля 2026', operationDate: '8 сентября 2026'},
-  {type: 'stay', label: '23273974', cost: 14000, nights: 3, discountRub: 0, discountPct: 0, level: 'VIP VIP 1', checkoutDate: '3 апреля 2026', operationDate: '8 сентября 2026'},
-  {type: 'stay', label: '21506230', cost: 2000, nights: 2, discountRub: 0, discountPct: 0, level: 'VIP VIP 1', checkoutDate: '7 декабря 2025', operationDate: '8 сентября 2026'},
-  {type: 'stay', label: '21504896', cost: 10000, nights: 1, discountRub: 0, discountPct: 0, level: 'VIP VIP 1', checkoutDate: '11 декабря 2025', operationDate: '8 сентября 2026'},
-  {type: 'level', label: 'Изменение уровня', discountPct: 30, level: 'VIP VIP 1', operationDate: '8 сентября 2026'},
-  {type: 'stay', label: '21504686', cost: 10000, nights: 1, discountRub: 0, discountPct: 0, level: 'VIP VIP', checkoutDate: '11 декабря 2025', operationDate: '8 сентября 2026'},
-  {type: 'stay', label: '21504558', cost: 10000, nights: 1, discountRub: 0, discountPct: 0, level: 'VIP VIP', checkoutDate: '11 декабря 2025', operationDate: '8 сентября 2026'},
-  {type: 'level', label: 'Изменение уровня', discountPct: 23, level: 'VIP VIP', operationDate: '8 сентября 2026'},
-  {type: 'stay', label: '21504361', cost: 6000, nights: 1, discountRub: 0, discountPct: 0, level: 'Gold', checkoutDate: '4 декабря 2025', operationDate: '8 сентября 2026'},
-  {type: 'stay', label: '21504314', cost: 6000, nights: 1, discountRub: 0, discountPct: 0, level: 'Gold', checkoutDate: '4 декабря 2025', operationDate: '8 сентября 2026'},
-  {type: 'stay', label: '21504181', cost: 6000, nights: 1, discountRub: 0, discountPct: 0, level: 'Gold', checkoutDate: '4 декабря 2025', operationDate: '8 сентября 2026'},
-  {type: 'stay', label: '21504170', cost: 1000, nights: 1, discountRub: 0, discountPct: 0, level: 'Gold', checkoutDate: '4 декабря 2025', operationDate: '8 сентября 2026'},
-  {type: 'level', label: 'Изменение уровня', discountPct: 15, level: 'Gold', operationDate: '8 сентября 2026'},
-  {type: 'stay', label: '21492546', cost: 6000, nights: 1, discountRub: 0, discountPct: 0, level: 'Silver22', checkoutDate: '4 декабря 2025', operationDate: '8 сентября 2026'},
-  {type: 'level', label: 'Изменение уровня', discountPct: 12, level: 'Silver22', operationDate: '8 сентября 2026'},
-  {type: 'stay', label: '21492539', cost: 6000, nights: 1, discountRub: 0, discountPct: 0, level: 'Base', checkoutDate: '4 декабря 2025', operationDate: '8 сентября 2026'},
+  {type: 'level', label: 'Изменение уровня', comment: 'Вознаграждение по реферальной программе', level: 'SUPER VIP', operationDate: Date.UTC(2026, 10, 24)},
+  {type: 'voucher', label: 'Срок действия ваучера истёк', operationDate: Date.UTC(2026, 8, 17)},
+  {type: 'voucher', label: 'Присвоение ваучера', operationDate: Date.UTC(2026, 8, 14)},
+  {type: 'stay', label: '25271547', cost: 2000, nights: 2, discountRub: 0, discountPct: 0, level: 'VIP VIP 1', checkoutDate: Date.UTC(2026, 8, 3), operationDate: Date.UTC(2026, 8, 8)},
+  {type: 'stay', label: '24101315', cost: 2000, nights: 1, discountRub: 0, discountPct: 0, level: 'VIP VIP 1', checkoutDate: Date.UTC(2026, 5, 2), operationDate: Date.UTC(2026, 8, 8)},
+  {type: 'stay', label: '23362037', cost: 192000, nights: 12, discountRub: 0, discountPct: 0, level: 'VIP VIP 1', checkoutDate: Date.UTC(2026, 3, 11), operationDate: Date.UTC(2026, 8, 8)},
+  {type: 'stay', label: '23273974', cost: 14000, nights: 3, discountRub: 0, discountPct: 0, level: 'VIP VIP 1', checkoutDate: Date.UTC(2026, 3, 3), operationDate: Date.UTC(2026, 8, 8)},
+  {type: 'stay', label: '21506230', cost: 2000, nights: 2, discountRub: 0, discountPct: 0, level: 'VIP VIP 1', checkoutDate: Date.UTC(2025, 11, 7), operationDate: Date.UTC(2026, 8, 8)},
+  {type: 'stay', label: '21504896', cost: 10000, nights: 1, discountRub: 0, discountPct: 0, level: 'VIP VIP 1', checkoutDate: Date.UTC(2025, 11, 11), operationDate: Date.UTC(2026, 8, 8)},
+  {type: 'level', label: 'Изменение уровня', discountPct: 30, level: 'VIP VIP 1', operationDate: Date.UTC(2026, 8, 8)},
+  {type: 'stay', label: '21504686', cost: 10000, nights: 1, discountRub: 0, discountPct: 0, level: 'VIP VIP', checkoutDate: Date.UTC(2025, 11, 11), operationDate: Date.UTC(2026, 8, 8)},
+  {type: 'stay', label: '21504558', cost: 10000, nights: 1, discountRub: 0, discountPct: 0, level: 'VIP VIP', checkoutDate: Date.UTC(2025, 11, 11), operationDate: Date.UTC(2026, 8, 8)},
+  {type: 'level', label: 'Изменение уровня', discountPct: 23, level: 'VIP VIP', operationDate: Date.UTC(2026, 8, 8)},
+  {type: 'stay', label: '21504361', cost: 6000, nights: 1, discountRub: 0, discountPct: 0, level: 'Gold', checkoutDate: Date.UTC(2025, 11, 4), operationDate: Date.UTC(2026, 8, 8)},
+  {type: 'stay', label: '21504314', cost: 6000, nights: 1, discountRub: 0, discountPct: 0, level: 'Gold', checkoutDate: Date.UTC(2025, 11, 4), operationDate: Date.UTC(2026, 8, 8)},
+  {type: 'stay', label: '21504181', cost: 6000, nights: 1, discountRub: 0, discountPct: 0, level: 'Gold', checkoutDate: Date.UTC(2025, 11, 4), operationDate: Date.UTC(2026, 8, 8)},
+  {type: 'stay', label: '21504170', cost: 1000, nights: 1, discountRub: 0, discountPct: 0, level: 'Gold', checkoutDate: Date.UTC(2025, 11, 4), operationDate: Date.UTC(2026, 8, 8)},
+  {type: 'level', label: 'Изменение уровня', discountPct: 15, level: 'Gold', operationDate: Date.UTC(2026, 8, 8)},
+  {type: 'stay', label: '21492546', cost: 6000, nights: 1, discountRub: 0, discountPct: 0, level: 'Silver22', checkoutDate: Date.UTC(2025, 11, 4), operationDate: Date.UTC(2026, 8, 8)},
+  {type: 'level', label: 'Изменение уровня', discountPct: 12, level: 'Silver22', operationDate: Date.UTC(2026, 8, 8)},
+  {type: 'stay', label: '21492539', cost: 6000, nights: 1, discountRub: 0, discountPct: 0, level: 'Base', checkoutDate: Date.UTC(2025, 11, 4), operationDate: Date.UTC(2026, 8, 8)},
 ];
 
 export const voucherCategories = [

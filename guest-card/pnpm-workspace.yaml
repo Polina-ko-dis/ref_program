@@ -1,3 +1,5 @@
+publicHoistPattern:
+  - '@fontsource*'
 allowBuilds:
   esbuild: true
   core-js-pure: false

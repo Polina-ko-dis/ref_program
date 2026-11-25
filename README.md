@@ -10,6 +10,10 @@
 
 В папке `guest-card/` лежит второй прототип — карта гостя. Публичная версия: [GitHub Pages](https://polina-ko-dis.github.io/ref_program/guest-card/#/GuestCard), локально — **http://127.0.0.1:4177/#/GuestCard** (`pnpm dev` в папке `guest-card/`).
 
+Локальная карта гостя использует штатные `Table`, `DataWidgetLayout`, `Label`, действия модальных окон и компоненты `Scaffold`. Для автономного запуска лента собрана из `RibbonBackground`, `RibbonButtonBack` и `RibbonButtonUserMenuView`, без загрузки серверного меню пользователя. Выбор даты и ваучеров работает через полные `DatePicker` и `Select`; даты без времени хранятся и форматируются в UTC, остальные значения — через `@reactor/intl`.
+
+Дополнительные пакеты `@reactor/table` `0.0.154` и `@reactor/scaffold-ui` `0.0.224` совместимы с Reactor `0.0.226`. Настройка `publicHoistPattern` в `guest-card/pnpm-workspace.yaml` делает транзитивные Fontsource-пакеты доступными Sass-импортам при установке через pnpm.
+
 Для обновления сайта выполните `pnpm build:pages` в папке `guest-card/` и опубликуйте содержимое её `dist/` в папку `guest-card/` ветки `gh-pages`. Корень `gh-pages` при этом не трогайте — там живёт сборка реферальной программы.
 
 ## Открыть

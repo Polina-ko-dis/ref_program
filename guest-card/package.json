@@ -11,9 +11,10 @@
     "preview": "vite preview --host 127.0.0.1 --port 4178"
   },
   "dependencies": {
-    "@fontsource/roboto-condensed": "5.3.0",
     "@reactor/reactor": "0.0.226",
+    "@reactor/scaffold-ui": "0.0.224",
     "@reactor/style": "0.0.200",
+    "@reactor/table": "0.0.154",
     "@reactor/intl": "1.0.155",
     "react": "19.3.0",
     "react-dom": "19.3.0"
