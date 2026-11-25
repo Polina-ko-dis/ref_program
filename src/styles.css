@@ -230,11 +230,7 @@ body {
 .intro-instructions li {
   display: list-item
 }
-.rewards-tile>[class*="_header_"] {
-  padding: 16px
-}
 .rewards-tile>[class*="_content_"] {
-  padding: 32px 16px 24px;
   overflow: visible
 }
 .rewards-tile>[class*="_content_"]>* {
@@ -368,9 +364,7 @@ body {
   padding-bottom: 24px
 }
 .reward-separator {
-  height: 1px;
-  margin: 28px 0;
-  background: rgb(var(--REACTOR-color-border))
+  margin: 28px 0
 }
 .program-status {
   position: relative
@@ -499,9 +493,6 @@ body {
 .voucher-line>:first-child {
   padding-top: 8px
 }
-.intro-instructions {
-  font-family: 'Open Sans',sans-serif
-}
 .intro-instructions li::marker {
   color: rgb(var(--REACTOR-color-foreground))
 }
@@ -515,8 +506,7 @@ body {
 }
 .page-heading {
   margin: 0;
-  line-height: 40px;
-  font-weight: 400
+  font: inherit
 }
 .intro {
   padding-bottom: 38px
@@ -527,12 +517,6 @@ body {
   }
   .navigation.mobile-open {
     visibility: visible
-  }
-}
-@media(max-width:760px) {
-  .page-heading [class*="_page-title_"] {
-    font-size: 32px!important;
-    line-height: 40px
   }
 }
 @media(max-width:1200px) {
@@ -639,9 +623,6 @@ body {
   }
   .intro-tile>[class*="_content_"] {
     padding: 16px
-  }
-  .rewards-tile>[class*="_content_"] {
-    padding-top: 20px
   }
   .limit-line {
     gap: 8px

@@ -2,6 +2,7 @@ import React, {useCallback, useEffect, useRef, useState} from 'react';
 import {ReactorTheme, Button, IconButton, Icon, Text, Select, DialogWindow, SnackbarWindow} from '@reactor/reactor';
 import Navigation from './Navigation.jsx';
 import ReferralPage from './ReferralPage.jsx';
+import ChangeReview from './ChangeReview.jsx';
 import {createInitialConfig, readConfig, saveConfig, activateConfig, validateConfig, STORAGE_KEY} from './model.mjs';
 import {accumulationOptions} from './data.mjs';
 
@@ -118,6 +119,7 @@ function Prototype() {
       </div>
     </div>
     {devOpen ? <aside className="dev-panel" aria-label="Панель прототипа"><Text text="Прототип" color="neutral" typography="caption"/><Select size="md" value={config.kind} options={programKinds} onChange={chooseKind}/><Select size="md" value={config.accumulation} options={accumulationOptions} onChange={accumulation => update({...config, accumulation})}/><Button text="Заполнить пример" onClick={fill}/><IconButton icon="undo" hint="Сбросить пример" onClick={reset}/><IconButton icon="decline" hint="Скрыть панель прототипа" onClick={() => setDevOpen(false)}/></aside> : <div className="dev-trigger"><IconButton icon="code" hint="Показать панель прототипа" onClick={() => setDevOpen(true)}/></div>}
+    <ChangeReview workspaceRef={workspaceScroll} suspended={Boolean(dialog)}/>
     <DialogWindow type={dialogData?.type || 'info'} header={dialogData?.header || ''} title={dialogData?.title || ''} state={[Boolean(dialog), setDialogVisible]} footer={dialogFooter}><Text text={dialogData?.text || ''}/></DialogWindow>
     <SnackbarWindow key={toast?.key || 'empty'} text={toast?.text || ''} status={toast?.status || 'success'} state={[Boolean(toast), setToastVisible]} close={() => setToast(null)}/>
   </>;
