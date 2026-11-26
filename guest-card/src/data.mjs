@@ -20,13 +20,26 @@ export const accumulations = {
   progress: 100,
   maxLevelReached: true,
   vouchers: 0,
+  invitedGuests: 3,
 };
+
+export const referralProgress = {
+  registeredGuests: 1,
+  stayedGuests: 1,
+  vouchers: 0,
+  nights: 3,
+};
+
+export const invitedGuests = [
+  {id: 'november-2026', name: 'Петров Петр Петрович', registrationDate: Date.UTC(2026, 10, 24), stayed: true, emailConfirmed: true, reward: 'начислено 3 ночи'},
+];
 
 export const attentionText = 'Накопления на карту начисляются через 5 дней после выезда гостя в 10:00 по времени средства размещения.';
 
-// Типы операций: stay — проживание (номер бронирования), level — изменение уровня, voucher — операции с ваучером.
+// Типы операций: stay — проживание (номер бронирования), level — изменение уровня, accumulation — начисление накоплений, voucher — операции с ваучером.
 export const operations = [
-  {type: 'level', label: 'Изменение уровня', comment: 'Вознаграждение по реферальной программе', level: 'SUPER VIP', operationDate: Date.UTC(2026, 10, 24)},
+  {type: 'level', label: 'Изменение уровня', level: 'SUPER VIP', operationDate: Date.UTC(2026, 10, 24)},
+  {type: 'accumulation', label: 'Начисление накоплений', nights: 3, comment: 'Вознаграждение по реферальной программе', operationDate: Date.UTC(2026, 10, 24)},
   {type: 'voucher', label: 'Срок действия ваучера истёк', operationDate: Date.UTC(2026, 8, 17)},
   {type: 'voucher', label: 'Присвоение ваучера', operationDate: Date.UTC(2026, 8, 14)},
   {type: 'stay', label: '25271547', cost: 2000, nights: 2, discountRub: 0, discountPct: 0, level: 'VIP VIP 1', checkoutDate: Date.UTC(2026, 8, 3), operationDate: Date.UTC(2026, 8, 8)},

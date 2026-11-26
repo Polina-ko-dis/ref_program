@@ -1,5 +1,5 @@
 import React from 'react';
-import {PageTop, Tile, Text, Tag, Button, Icon, HintWindow, InfoAlert, HelpIcon, DataWidget, DataWidgetLayout, Row, Column} from '@reactor/reactor';
+import {PageTop, Tile, CoreTile, Text, Tag, Button, Icon, HintWindow, InfoAlert, HelpIcon, LabelSpan, Separator, DataWidget, DataWidgetMain, DataWidgetDetails, DataWidgetLayout, Row, Column} from '@reactor/reactor';
 import {Table} from '@reactor/table';
 import {i} from '@reactor/intl';
 import {card, accumulations, attentionText, operations} from './data.mjs';
@@ -27,15 +27,28 @@ function GuestCardWidget({guest, onEditGuest}) {
     ]}/>;
 }
 
-function AccumulationsWidget() {
-  return <DataWidget header="Накопления"
-    main={{mode: 'pie', value: accumulations.progress, total: 100, partColor: 'warning', text: i.percent(accumulations.progress / 100, 0)}}
-    details={[
-      {label: 'Проживаний на сумму', values: [i.currencyCode(accumulations.amount, 'RUB', 0)]},
-      {label: 'Ночей в гостинице', values: [i.number(accumulations.nights, 0)]},
-      {label: 'Достигнут максимальный уровень', values: [{type: 'icon', name: 'success', color: 'success'}]},
-      {label: 'Ваучеры', values: [i.number(accumulations.vouchers, 0)]},
-    ]}/>;
+function AccumulationsWidget({onOpenInvitedGuests, invitedGuestsLinkRef}) {
+  const details = [
+    {label: 'Проживаний на сумму', values: [i.currencyCode(accumulations.amount, 'RUB', 0)]},
+    {label: 'Ночей в гостинице', values: [i.number(accumulations.nights, 0)]},
+    {label: 'Достигнут максимальный уровень', values: [{type: 'icon', name: 'success', color: 'success'}]},
+    {label: 'Ваучеры', values: [i.number(accumulations.vouchers, 0)]},
+    {label: {text: 'Приглашенные гости', lines: 1, onClick: onOpenInvitedGuests, ref: invitedGuestsLinkRef}, values: [{type: 'tag', color: 'success', text: i.number(accumulations.invitedGuests, 0)}]},
+  ];
+  return <CoreTile>
+    <Column padding={16} gap={16} noGrow>
+      <LabelSpan text="Накопления" typography="subtitle"/>
+      <Row alignItems="flex-start" gap={16} noGrow>
+        <DataWidgetMain mode="pie" value={accumulations.progress} total={100} partColor="warning" text={i.percent(accumulations.progress / 100, 0)}/>
+        <Column gap={8} minWidth={0}>
+          {details.map((detail, index) => <React.Fragment key={index}>
+            {index > 0 && <Separator/>}
+            <DataWidgetDetails details={[detail]}/>
+          </React.Fragment>)}
+        </Column>
+      </Row>
+    </Column>
+  </CoreTile>;
 }
 
 const discountHint = 'Процент скидки, применённый к проживанию по уровню лояльности на момент операции.';
@@ -76,10 +89,10 @@ function OperationsTile() {
   </Tile>;
 }
 
-export default function GuestCardPage({guest, onEditGuest, onEditAccumulations, onAssignVoucher}) {
+export default function GuestCardPage({guest, onEditGuest, onEditAccumulations, onAssignVoucher, onOpenInvitedGuests, invitedGuestsLinkRef}) {
   return <main className="page" id="main-content">
     <div className="page-header">
-      <PageTop title={<h1 className="page-heading"><Text text={`${guest.lastName} ${guest.firstName}`} typography="page-title"/><Tag color="purple" text={card.level}/></h1>}/>
+      <PageTop title={<h1 className="page-heading"><Text text={`${guest.lastName} ${guest.firstName}`} typography="page-title"/><LevelTag level="SUPER VIP"/></h1>}/>
     </div>
     <Tile>
       <Row alignItems="center" gap={8} noGrow wrap>
@@ -90,7 +103,7 @@ export default function GuestCardPage({guest, onEditGuest, onEditAccumulations, 
     <div className="guest-card-widgets">
       <DataWidgetLayout maxPerRow={2}>
         <GuestCardWidget guest={guest} onEditGuest={onEditGuest}/>
-        <AccumulationsWidget/>
+        <AccumulationsWidget onOpenInvitedGuests={onOpenInvitedGuests} invitedGuestsLinkRef={invitedGuestsLinkRef}/>
       </DataWidgetLayout>
     </div>
     <OperationsTile/>

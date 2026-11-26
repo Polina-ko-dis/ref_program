@@ -80,6 +80,10 @@ body {
   padding: 0 !important;
   background: transparent
 }
+.invited-guests-progress {
+  padding: 12px;
+  background: rgb(var(--REACTOR-color-background-disabled))
+}
 .modal-form {
   display: grid;
   grid-template-columns: 160px minmax(0, 1fr);
