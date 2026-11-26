@@ -84,6 +84,59 @@ body {
   padding: 12px;
   background: rgb(var(--REACTOR-color-background-disabled))
 }
+.guest-prototype-layer {
+  position: fixed;
+  inset: 0;
+  z-index: 1700;
+  isolation: isolate;
+  pointer-events: none
+}
+.guest-prototype-select {
+  position: relative;
+  min-width: 0
+}
+.guest-prototype-options {
+  position: absolute;
+  bottom: calc(100% + 8px);
+  left: 0;
+  z-index: 1;
+  min-width: 100%;
+  max-height: calc(100vh - 140px);
+  overflow-y: auto
+}
+.guest-prototype-panel {
+  position: fixed;
+  pointer-events: auto;
+  z-index: 100;
+  bottom: 16px;
+  left: calc(50% + 140px);
+  transform: translateX(-50%);
+  display: grid;
+  grid-template-columns: auto 220px 160px auto;
+  align-items: center;
+  gap: 10px;
+  max-width: calc(100vw - 32px);
+  padding: 8px 12px;
+  border: 1px solid rgb(var(--REACTOR-color-border));
+  border-radius: 999px;
+  background: rgb(var(--REACTOR-color-background-secondary)/.96);
+  box-shadow: 0 6px 24px rgb(var(--REACTOR-color-shadow)/.18)
+}
+.guest-prototype-kind,.guest-prototype-accumulation {
+  min-width: 0
+}
+.guest-prototype-trigger {
+  position: fixed;
+  pointer-events: auto;
+  z-index: 100;
+  right: 16px;
+  bottom: 16px;
+  padding: 6px;
+  border: 1px solid rgb(var(--REACTOR-color-border));
+  border-radius: 50%;
+  background: rgb(var(--REACTOR-color-background-secondary));
+  box-shadow: 0 2px 8px rgb(var(--REACTOR-color-shadow)/.15)
+}
 .modal-form {
   display: grid;
   grid-template-columns: 160px minmax(0, 1fr);
@@ -134,7 +187,29 @@ body {
 .skip-link:focus {
   top: 8px
 }
+@media(max-width:1200px) {
+  .guest-prototype-panel {
+    left: 50%
+  }
+}
 @media(max-width:760px) {
+  .guest-prototype-panel {
+    bottom: 8px;
+    width: calc(100vw - 24px);
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: 8px;
+    border-radius: 12px
+  }
+  .guest-prototype-title {
+    display: none
+  }
+  .guest-prototype-kind,.guest-prototype-accumulation {
+    grid-column: 1
+  }
+  .guest-prototype-close {
+    grid-column: 2;
+    grid-row: 1 / 3
+  }
   .page {
     padding: 24px 16px 48px
   }
